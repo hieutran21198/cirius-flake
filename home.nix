@@ -36,20 +36,6 @@
     kdePackages.polkit-kde-agent-1
     kdePackages.qt6ct
     kdePackages.qtwayland
-    waybar
-    rofi-wayland
-    dunst
-    wl-clipboard
-    slurp # https://wiki.hyprland.org/0.22.0beta/Useful-Utilities/Screen-Sharing/
-    cliphist # https://wiki.hyprland.org/0.22.0beta/Useful-Utilities/Clipboard-Managers/
-    swww
-    ranger
-    hyprpaper
-    paleta
-    python312Packages.colorthief
-    kdePackages.kcolorpicker
-    dipc
-    libnotify
 
     ### Utilities
     # Terminal applications
@@ -75,7 +61,6 @@
     firefox
     google-chrome
   ];
-
 
   programs.home-manager = {
     enable = true;
