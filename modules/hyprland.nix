@@ -1,4 +1,4 @@
-{ config, pkgs, ... }: {
+{ pkgs, ... }: {
   home.packages = with pkgs; [
     rofi-wayland
     dunst
@@ -13,6 +13,14 @@
     kdePackages.kcolorpicker
     dipc
     libnotify
+    wl-clipboard
+    wdisplays
+    wlr-randr
+    xdg-utils
+    kdePackages.qtstyleplugin-kvantum
+    kdePackages.polkit-kde-agent-1
+    kdePackages.qt6ct
+    kdePackages.qtwayland
   ];
 
   programs.waybar = {

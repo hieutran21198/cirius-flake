@@ -16,7 +16,7 @@
     homeConfigurations = {
       "cirius" = home-manager.lib.homeManagerConfiguration {
         pkgs = import nixpkgs { system = "x86_64-linux"; };
-        modules = [ ./modules/home.nix ./modules/hyprland.nix ]; # Defined later
+        modules = [ ./modules/home.nix ./modules/shell.nix ./modules/hyprland.nix ]; # Defined later
       };
     };
   };
