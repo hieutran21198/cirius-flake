@@ -8,7 +8,6 @@
     vscode
     kitty
     cmake
-    git
     gh
     # Devops
     awscli2
@@ -58,11 +57,6 @@
 
   programs.home-manager = {
     enable = true;
-  };
-
-  programs.starship = {
-    enable = true;
-    settings = { };
   };
 
   programs.wezterm = {
