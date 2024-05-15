@@ -28,10 +28,7 @@
       }
 
       * {
-        ${if config.hostId == "cirius" then ''
         font-size: 18px;
-      '' else ''
-        ''}
       }
     '';
     settings = [{
@@ -47,8 +44,6 @@
         "cpu"
         "memory"
         "temperature"
-      ] ++ (if config.hostId == "cirius" then [ "battery" ] else [ ])
-      ++ [
         "clock"
         "tray"
       ];
