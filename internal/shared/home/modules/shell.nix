@@ -1,5 +1,15 @@
 { pkgs, lib, ... }: {
-  home.packages = with pkgs; [ ];
+  home.packages = with pkgs; [
+    ### Utilities
+    btop
+    eza
+    wget
+    ripgrep
+    unzip
+    fzf
+    fd
+    fastfetch
+  ];
 
   programs.fish = {
     enable = true;

@@ -1,3 +1,12 @@
-build:
-  cmds:
-    - sudo nixos-rebuild --flake . {{ .CLI_ARGS }}
+version: "3"
+
+tasks:
+  default:
+    cmds:
+      - task -l
+    silent: true
+
+  build:
+    desc: "Build Nix Configuration"
+    cmds:
+      - sudo nixos-rebuild build --flake . {{ .CLI_ARGS }}

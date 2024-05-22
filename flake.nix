@@ -14,14 +14,29 @@
       cirius = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
-          ./internal/os/nix/configuration.nix
-          ./internal/os/nix/hardware-configuration.nix
+          ./internal/profile/nix/configuration.nix
+          ./internal/profile/nix/hardware-configuration.nix
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.users = {
-              cirius = import ./internal/os/nix/home/home.nix;
+              cirius = import ./internal/profile/nix/home/home.nix;
+            };
+          }
+        ];
+      };
+      hieutran = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        modules = [
+          ./internal/profile/mac/configuration.nix
+          ./internal/profile/mac/hardware-configuration.nix
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users = {
+              hieutran = import ./internal/profile/mac/home/home.nix;
             };
           }
         ];
@@ -35,6 +50,4 @@
       ];
     };
   };
-
-
 }
