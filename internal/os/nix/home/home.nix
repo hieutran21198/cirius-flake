@@ -1,11 +1,7 @@
 { pkgs, ... }: {
-
   imports = [
-    ./modules/shell.nix
-    ./modules/git.nix
     ./modules/hyprland.nix
   ];
-
 
   home.username = "cirius";
   home.homeDirectory = "/home/cirius";

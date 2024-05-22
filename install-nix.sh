@@ -2,7 +2,7 @@
 
 set -e
 
-hardware_conf_file=$PWD/modules/os/nix/hardware-configuration.nix
+hardware_conf_file=$PWD/internal/os/nix/hardware-configuration.nix
 
 # check hardware-configuration.nix exists
 if [ ! -f "$hardware_conf_file" ]; then

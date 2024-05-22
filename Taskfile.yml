@@ -1,0 +1,3 @@
+build:
+  cmds:
+    - sudo nixos-rebuild --flake . {{ .CLI_ARGS }}
