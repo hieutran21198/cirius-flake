@@ -52,7 +52,7 @@
     pavucontrol
     # browsers
     firefox
-    google-chrome
+    microsoft-edge
   ];
 
   programs.home-manager = {
