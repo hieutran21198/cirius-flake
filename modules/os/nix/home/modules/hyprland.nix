@@ -1,3 +1,4 @@
+# DEPRECATED: This file is no longer used. It is kept here for reference only.
 { pkgs, ... }: {
   home.packages = with pkgs; [
     rofi-wayland

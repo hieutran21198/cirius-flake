@@ -1,11 +1,6 @@
 { config, pkgs, ... }:
 
 {
-  imports =
-    [
-      ./hardware-configuration.nix
-    ];
-
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -46,15 +41,18 @@
     ];
   };
 
-
-  # Enable the X11 windowing system.
-  services.xserver.enable = true;
-
-  # Enable the KDE Plasma Desktop Environment.
-  services.xserver.displayManager.sddm.enable = true;
-  # services.xserver.desktopManager.plasma5.enable = true;
-  # services.desktopManager.plasma6.enable = true;
-  services.xserver.displayManager.sddm.wayland.enable = true;
+  services.displayManager = {
+    sddm = {
+      enable = true;
+      wayland = {
+        enable = true;
+      };
+    };
+    autoLogin = {
+      enable = true;
+      user = "cirius";
+    };
+  };
 
   # Configure keymap in X11
   services.xserver = {
@@ -96,11 +94,7 @@
     ];
   };
 
-  # Enable automatic login for the user.
-  services.xserver.displayManager.autoLogin = {
-    enable = false;
-    user = "cirius";
-  };
+
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
@@ -114,23 +108,6 @@
   environment.systemPackages = with pkgs; [
     neovim
   ];
-
-  environment.sessionVariables = {
-    NIXOS_OZONE_WL = "1";
-
-    QT_QPA_PLATFORM = "wayland";
-    QT_QPA_PLATFORMTHEME = "qt6ct";
-    QT_WAYLAND_DISABLE_WINDOWDECORATION = "1";
-    QT_AUTO_SCREEN_SCALE_FACTOR = "1";
-    QT_STYLE_OVERRIDE = "kvantum";
-  };
-
-
-  programs.hyprland = {
-    enable = true;
-    portalPackage = pkgs.xdg-desktop-portal-hyprland;
-  };
-
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
